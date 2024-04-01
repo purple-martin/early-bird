@@ -1,0 +1,47 @@
+---
+import Layout from '../../layouts/PageLayout.astro';
+import SignUp from '../../components/static/SignUp.astro';
+
+const metadata = {
+  title: 'signup',
+};
+
+const type = 'password';
+---
+
+<Layout metadata={metadata}>
+  <SignUp
+    action="/api/signup"
+    title="Get started with Purple Martin."
+    subtitle="Secure your your financial future with Purple Martin."
+    inputs={[
+      {
+        type: 'text',
+        name: 'first_name',
+        placeholder: 'First Name',
+      },
+      {
+        type: 'text',
+        name: 'last_name',
+        placeholder: 'Last Name',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        placeholder: 'Email',
+      },
+      {
+        type: type,
+        name: 'password',
+        placeholder: 'Password',
+      },
+    ]}
+    disclaimer={{
+      label:
+        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+    }}
+    description="Begin your journey to financial freedom today."
+    button="Signup"
+  />
+</Layout>
+

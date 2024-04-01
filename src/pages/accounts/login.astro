@@ -1,0 +1,30 @@
+---
+import Layout from '../../layouts/PageLayout.astro';
+import LoginPage from '../../components/static/LoginPage.astro';
+
+const metadata = {
+  title: 'login',
+};
+---
+
+<Layout metadata={metadata}>
+  <LoginPage
+    action="/api/login"
+    title="Welcome to Purple Martin!"
+    subtitle="Log in or sign up."
+    inputs={[
+      {
+        type: 'username',
+        name: 'username',
+        label: 'Username',
+      },
+      {
+        type: 'password',
+        name: 'password',
+        label: 'Password',
+      }
+    ]}
+    description="Sign in to your account."
+    button="Sign in"
+  />
+</Layout>
