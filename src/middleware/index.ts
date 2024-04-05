@@ -19,6 +19,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
   console.log('GET REQUEST: ', context.url.pathname);
 
   if (
+    requestPath === '/'||
     requestPath === '/_image' ||
     requestPath === '/accounts/login' ||
     requestPath === '/accounts/signup' ||
