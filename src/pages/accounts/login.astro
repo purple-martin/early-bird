@@ -1,5 +1,5 @@
 ---
-import Layout from '../../layouts/PageLayout.astro';
+import Layout from '../../layouts/GuestLayout.astro';
 import LoginPage from '../../components/static/LoginPage.astro';
 
 const metadata = {
@@ -10,13 +10,13 @@ const metadata = {
 <Layout metadata={metadata}>
   <LoginPage
     action="/api/login"
-    title="Welcome to Purple Martin!"
-    subtitle="Log in or sign up."
+    title="PURPLE MARTIN"
+    subtitle="there's a new bird in town."
     inputs={[
       {
-        type: 'username',
-        name: 'username',
-        label: 'Username',
+        type: 'email',
+        name: 'email',
+        label: 'Email',
       },
       {
         type: 'password',
@@ -25,6 +25,6 @@ const metadata = {
       }
     ]}
     description="Sign in to your account."
-    button="Sign in"
+    button="LOG IN"
   />
 </Layout>
