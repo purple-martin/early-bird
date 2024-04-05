@@ -18,7 +18,7 @@ metadata:
   openGraph:
     site_name: Purple Martin
     images:
-      - url: '~/assets/images/default_image.jpg'
+      - url: '~/assets/images/default.png'
         width: 1200
         height: 628
     type: website
