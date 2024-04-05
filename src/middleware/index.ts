@@ -39,8 +39,8 @@ export const onRequest = defineMiddleware(async (context, next) => {
   if (!sessionId) {
     context.locals.user = null;
     context.locals.session = null;
-    console.log('NO SESSION ID, WHAT SHOULD WE DO?');
-    //return next();
+    
+    console.log("No user session, routing to login.")
     return context.redirect('/accounts/login');
   }
 
