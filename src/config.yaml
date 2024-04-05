@@ -1,6 +1,6 @@
 site:
   name: Purple Martin
-  site: 'https://purplemartin.app'
+  site: 'https://purplemartin.netlify.app'
   base: '/'
   trailingSlash: false
 
