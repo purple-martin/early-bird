@@ -2,6 +2,7 @@ import { ANALYTICS, SITE } from './src/utils/config.ts';
 import { defineConfig, squooshImageService } from 'astro/config';
 import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin } from './src/utils/frontmatter.mjs';
 
+import alpine from '@astrojs/alpinejs';
 import compress from 'astro-compress';
 import { fileURLToPath } from 'url';
 import htmx from 'astro-htmx';
@@ -29,6 +30,7 @@ export default defineConfig({
   trailingSlash: SITE.trailingSlash ? 'always' : 'never',
   output: 'hybrid',
   integrations: [
+    alpine({entrypoint: './entrypoint.ts'}),
     htmx(),
     tailwind({
       applyBaseStyles: false,

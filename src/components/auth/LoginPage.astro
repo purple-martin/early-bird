@@ -3,7 +3,7 @@ import FormContainer from '../ui/Form.astro';
 import Headline from '../ui/Headline.astro';
 import WidgetWrapper from '../ui/WidgetWrapper.astro';
 import type { Login } from '../../types';
-
+import { getPermalink } from '../../utils/permalinks';
 const {
   action = await Astro.slots.render('action'),
   title = await Astro.slots.render('title'),
@@ -20,6 +20,8 @@ const {
   classes = {},
   bg = await Astro.slots.render('bg'),
 } = Astro.props as Login;
+
+console.log('AUEOUAOEU: ', getPermalink('signup', 'auth'));
 ---
 
 <!-- <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
@@ -52,8 +54,10 @@ const {
         <h1 class='text-3xl font-semibold mb-6 text-black text-center'>PURPLE MARTIN</h1>
         <h1 class='text-sm font-semibold mb-6 text-gray-500 text-center'>There's a new bird in town...</h1>
         <form
-          action='#'
-          method='POST'
+          x-init
+          x-target='/api/login'
+          action='/api/login'
+          method='post'
           class='space-y-4'>
           <div>
             <label
@@ -100,7 +104,7 @@ const {
 
           <span>
             <a
-              href='#'
+              href={getPermalink('signup','auth')}
               class='text-black hover:underline'
               >Sign up</a
             >

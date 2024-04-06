@@ -3,6 +3,7 @@ import FormContainer from '../ui/Form.astro';
 import Headline from '../ui/Headline.astro';
 import WidgetWrapper from '../ui/WidgetWrapper.astro';
 import type { Signup } from '../../types';
+import { getPermalink } from '../../utils/permalinks';
 
 const {
   action = await Astro.slots.render('action'),
@@ -106,7 +107,7 @@ const {
           <span>
             Already have an account?
             <a
-              href='#'
+              href={getPermalink('login', 'auth')}
               class='text-black hover:underline'
               >Log in</a
             >

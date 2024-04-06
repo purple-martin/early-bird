@@ -15,6 +15,7 @@
     "schema:migrate": "bun ./src/data/migrate"
   },
   "dependencies": {
+    "@alpinejs/intersect": "^3.13.8",
     "@alpinejs/morph": "^3.13.5",
     "@astrojs/alpinejs": "^0.4.0",
     "@astrojs/rss": "4.0.5",
@@ -24,6 +25,7 @@
     "@fontsource-variable/inter": "^5.0.16",
     "@fontsource-variable/noto-serif-hk": "^5.0.11",
     "@fontsource-variable/public-sans": "^5.0.17",
+    "@imacrayon/alpine-ajax": "^0.5.1",
     "@libsql/client": "^0.4.0-pre.7",
     "@lucia-auth/adapter-drizzle": "^1.0.1",
     "@lucia-auth/adapter-sqlite": "^3.0.0",

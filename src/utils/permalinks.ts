@@ -1,7 +1,6 @@
+import { APP_BLOG, SITE } from '~/utils/config';
+
 import slugify from 'limax';
-
-import { SITE, APP_BLOG } from '~/utils/config';
-
 import { trim } from '~/utils/utils';
 
 export const trimSlash = (s: string) => trim(trim(s, '/'));
@@ -43,6 +42,9 @@ export const getPermalink = (slug = '', type = 'page'): string => {
   let permalink: string;
 
   switch (type) {
+    case 'auth':
+      permalink = createPath('/auth/', slug);
+      break;
     case 'category':
       permalink = createPath(CATEGORY_BASE, trimSlash(slug));
       break;
