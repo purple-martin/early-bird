@@ -12,6 +12,8 @@ export async function POST(context: APIContext): Promise<Response> {
   const firstName = formData.get('first_name') as string;
   const lastName = formData.get('last_name') as string;
 
+  console.log("FORM:", formData)
+
   // const validateUsername = (username: string) => {
   //   // username must be between 4 ~ 31 characters, and only consists of lowercase letters, 0-9, -, and _
   //   // keep in mind some database (e.g. mysql) are case insensitive

@@ -40,9 +40,9 @@ const {
         <form
           class='space-y-6'
           x-init
-          x-target='/api/signup'
+          x-target.nofollow
           action='/api/signup'
-          method='post'>
+          method='POST'>
           <div>
             <label
               for='name'
