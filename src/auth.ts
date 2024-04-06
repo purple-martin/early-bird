@@ -1,16 +1,18 @@
 import { Lucia, TimeSpan } from "lucia";
 import { sessionTable, userTable } from "./data/schema";
-
+import {env} from './env/server.ts'
 import { DrizzleSQLiteAdapter } from "@lucia-auth/adapter-drizzle";
 import { createClient } from "@libsql/client";
 import { drizzle } from 'drizzle-orm/libsql';
 
 const tursoClient = createClient({ 
-  url: import.meta.env.TURSO_DATABASE_URL, 
-  authToken: import.meta.env.TURSO_AUTH_TOKEN
+  url: env.TURSO_DATABASE_URL, 
+  authToken: env.TURSO_AUTH_TOKEN
 })
 
+
 export const db = drizzle(tursoClient)
+
 const adapter = new DrizzleSQLiteAdapter(db, sessionTable, userTable);
 
 export const lucia = new Lucia(adapter, {
