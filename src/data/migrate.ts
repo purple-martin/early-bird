@@ -1,7 +1,8 @@
 import { db } from '../auth'
 import { migrate } from 'drizzle-orm/libsql/migrator';
 
-migrate(db, { migrationsFolder: 'src/data/migrations' })
+console.log('Preparing to migrate.');
+migrate(db, { migrationsFolder: './src/data/migrations' })
   .then(() => {
     console.log('Migrations completed!');
     process.exit(0);

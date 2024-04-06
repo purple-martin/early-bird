@@ -2,7 +2,7 @@ import { integer, sqliteTable, text, uniqueIndex } from 'drizzle-orm/sqlite-core
 
 import { sql } from 'drizzle-orm';
 
-export const userTable = sqliteTable('user', {
+export const userTable = sqliteTable('users', {
   id: text('id').notNull().primaryKey(),
   first_name: text('first_name'),
   last_name: text('last_name'),
