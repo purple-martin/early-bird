@@ -1,5 +1,4 @@
 ---
-
 import type { Login } from '../../types';
 import { getPermalink } from '../../utils/permalinks';
 const {
@@ -20,14 +19,14 @@ const {
 } = Astro.props as Login;
 ---
 
-<div class='flex h-screen'>
+<div class='flex h-screen purple-dark text-foreground bg-primary-200'>
   <!-- Left Pane -->
-  <div class='hidden lg:flex items-center justify-center flex-1 bg-gray-dark text-black'>
+  <div class='hidden lg:flex items-center justify-center flex-1 bg-background text-black'>
     <div class='max-w-md text-center'>PURPLE MARTIN</div>
   </div>
   <!-- Right Pane -->
-  <div class='w-full bg-gray-light lg:w-1/2 flex items-center justify-center'>
-    <div class='max-w-md w-full p-8 bg-white dark:bg-gray-400 shadow-lg shadow-purple rounded-lg'>
+  <div class='w-full lg:w-1/2 flex items-center justify-center bg-primary-800'>
+    <div class='max-w-md w-full p-8 bg-opacity-35 border-white/15 border-1 shadow-lg shadow-purple rounded-lg'>
       <div class='sm:mx-auto sm:w-full sm:max-w-sm'>
         <!-- <img
           class='mx-auto h-10 w-auto'

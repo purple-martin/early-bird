@@ -3,14 +3,17 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "allowJs": true,
-    "baseUrl": "./",
+    "baseUrl": "/Users/keithrobinson/PurpleMartin",
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["src/*"],
+      "@/*": ["./src/*"]
     },
     "plugins": [
       {
         "name": "@astrojs/ts-plugin"
-      }
-    ]
+      },
+    ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }
