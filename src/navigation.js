@@ -67,35 +67,35 @@ export const headerData = {
 export const footerData = {
   links: [
     {
-      title: 'Primary',
+      title: 'About',
       links: [
-        { text: 'One', href: '#' },
-        { text: 'Two', href: '#' },
-        { text: 'Three', href: '#' },
+        { text: 'Purple Martin', href: '#' },
+        { text: 'Mission', href: '#' },
+        { text: 'Culture', href: '#' },
       ],
     },
     {
-      title: 'Secondary',
+      title: 'Ethical',
       links: [
-        { text: 'One', href: '#' },
-        { text: 'Two', href: '#' },
-        { text: 'Three', href: '#' },
+        { text: 'Saftey & Transparency', href: '#' },
+        { text: 'Anti-Trafficking Policy', href: '#' },
+        { text: 'Age Verification', href: '#' },
       ],
     },
     {
-      title: 'Tertiary',
+      title: 'Legal',
       links: [
-        { text: 'One', href: '#' },
-        { text: 'Two', href: '#' },
-        { text: 'Three', href: '#' },
+        { text: 'Terms of Service', href: '#' },
+        { text: 'Privacy Policy', href: '#' },
+        { text: 'Cookies', href: '#' },
       ],
     },
     {
-      title: 'Quaternary',
+      title: 'Support',
       links: [
-        { text: 'One', href: '#' },
-        { text: 'Two', href: '#' },
-        { text: 'Three', href: '#' },
+        { text: 'Subscribers', href: '#' },
+        { text: 'Creators', href: '#' },
+        { text: 'Complaints', href: '#' },
       ],
     },
   ],
