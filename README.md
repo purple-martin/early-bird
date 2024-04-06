@@ -33,15 +33,17 @@
 │   │   └── styles/
 │   │       └── tailwind.css
 │   ├── components/
+│   │   ├── auth/
 │   │   ├── blog/
 │   │   ├── common/
+│   │   ├── static/
 │   │   ├── ui/
 │   │   ├── widgets/
-│   │   │   ├── Header.astro
+│   │   │   ├── Announcement.astro
 │   │   │   └── ...
+│   │   ├── Brand.astro
 │   │   ├── CustomStyles.astro
-│   │   ├── Favicons.astro
-│   │   └── Brand.astro
+│   │   └── Favicons.astro
 │   ├── content/
 │   │   ├── post/
 │   │   │   ├── post-slug-1.md
@@ -49,17 +51,25 @@
 │   │   │   └── ...
 │   │   └-- config.ts
 │   ├── layouts/
+│   │   ├── Footer.astro
+│   │   ├── GuestLayout.astro
+│   │   ├── Header.astro
 │   │   ├── Layout.astro
 │   │   ├── MarkdownLayout.astro
 │   │   └── PageLayout.astro
+│   ├── middleware/
 │   ├── pages/
 │   │   ├── [...blog]/
 │   │   │   ├── [category]/
 │   │   │   ├── [tag]/
 │   │   │   ├── [...page].astro
 │   │   │   └── index.astro
-│   │   ├── index.astro
+│   │   ├── auth/
 │   │   ├── 404.astro
+│   │   ├── about.astro
+│   │   ├── contact.astro
+│   │   ├── dashboard.astro
+│   │   ├── index.astro
 │   │   ├-- rss.xml.ts
 │   │   └── ...
 │   ├── utils/

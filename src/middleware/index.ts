@@ -20,9 +20,9 @@ export const onRequest = defineMiddleware(async (context, next) => {
 
   if (
     requestPath === '/_image' ||
-    requestPath === '/accounts/login' ||
-    requestPath === '/accounts/signup' ||
-    requestPath === '/accounts/logout' ||
+    requestPath === '/auth/login' ||
+    requestPath === '/auth/signup' ||
+    requestPath === '/auth/logout' ||
     requestPath === '/api/login' ||
     requestPath === '/api/signup' ||
     requestPath === '/api/logout' ||
@@ -41,7 +41,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
     context.locals.session = null;
     
     console.log("No user session, routing to login.")
-    return context.redirect('/accounts/login');
+    return context.redirect('/auth/login');
   }
 
   const { session, user } = await lucia.validateSession(sessionId);
