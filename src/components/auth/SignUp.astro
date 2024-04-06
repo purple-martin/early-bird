@@ -1,10 +1,6 @@
 ---
-import FormContainer from '../ui/Form.astro';
-import Headline from '../ui/Headline.astro';
-import WidgetWrapper from '../ui/WidgetWrapper.astro';
 import type { Signup } from '../../types';
 import { getPermalink } from '../../utils/permalinks';
-
 const {
   action = await Astro.slots.render('action'),
   title = await Astro.slots.render('title'),
@@ -23,96 +19,109 @@ const {
 } = Astro.props as Signup;
 ---
 
-<!-- <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
-  <Headline title={title} subtitle={subtitle} tagline={tagline} />
-
-  {
-    inputs && (
-      <div class="flex flex-col max-w-xl mx-auto rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow p-4 sm:p-6 lg:p-8 w-full">
-        <FormContainer
-          action={action}
-          inputs={inputs}
-          textarea={textarea}
-          disclaimer={disclaimer}
-          button={button}
-          description={description}
-        />
-      </div>
-    )
-  }
-</WidgetWrapper> -->
 <div class='flex h-screen'>
   <!-- Left Pane -->
-  <div class='hidden lg:flex items-center justify-center flex-1 bg-white text-black'>
+  <div class='hidden lg:flex items-center justify-center flex-1 bg-gray-dark text-black'>
     <div class='max-w-md text-center'>PURPLE MARTIN</div>
   </div>
   <!-- Right Pane -->
-  <div class='w-full bg-gray-100 lg:w-1/2 flex items-center justify-center'>
-    <div class='max-w-md w-full p-6'>
-      <div class='bg-white dark:bg-gray-900 shadow-md rounded-lg px-8 py-6 max-w-md'>
-        <h1 class='text-3xl font-semibold mb-6 text-black text-center'>PURPLE MARTIN</h1>
-        <h1 class='text-sm font-semibold mb-6 text-gray-500 text-center'>There's a new bird in town...</h1>
+  <div class='w-full bg-gray-light lg:w-1/2 flex items-center justify-center'>
+    <div class='max-w-md w-full p-8 bg-white dark:bg-gray-400 shadow-lg shadow-purple rounded-lg'>
+      <div class='sm:mx-auto sm:w-full sm:max-w-sm'>
+        <img
+          class='mx-auto h-10 w-auto'
+          src='https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600'
+          alt='PurpleMartin Logo'
+        />
+        <h2 class='mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900'>PURPLE MARTIN</h2>
+      </div>
+
+      <div class='mt-10 sm:mx-auto sm:w-full sm:max-w-sm'>
         <form
-          action='#'
-          method='POST'
-          class='space-y-4'>
+          class='space-y-6'
+          x-init
+          x-target='/api/signup'
+          action='/api/signup'
+          method='post'>
           <div>
             <label
-              for='Name'
-              class='block text-sm font-medium text-gray-700'
+              for='name'
+              class='block text-sm font-medium leading-6 text-gray-900'
               >Name</label
             >
-            <input
-              type='text'
-              id='name'
-              name='name'
-              class='mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300'
-            />
+            <div class='mt-2'>
+              <input
+                id='name'
+                name='name'
+                type='text'
+                autocomplete='name'
+                required
+                class='block w-full rounded-md border-0 py-1.5 text-gray-dark shadow-sm ring-1 ring-inset ring-gray-dark placeholder:text-gray focus:ring-2 focus:ring-inset focus:ring-purple sm:text-sm sm:leading-6'
+              />
+            </div>
           </div>
           <div>
             <label
               for='email'
-              class='block text-sm font-medium text-gray-700'
+              class='block text-sm font-medium leading-6 text-gray-900'
               >Email</label
             >
-            <input
-              type='text'
-              id='email'
-              name='email'
-              class='mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300'
-            />
+            <div class='mt-2'>
+              <input
+                id='email'
+                name='email'
+                type='email'
+                autocomplete='email'
+                required
+                class='block w-full rounded-md border-0 py-1.5 text-gray-dark shadow-sm ring-1 ring-inset ring-gray-dark placeholder:text-gray focus:ring-2 focus:ring-inset focus:ring-purple sm:text-sm sm:leading-6'
+              />
+            </div>
           </div>
+
           <div>
-            <label
-              for='password'
-              class='block text-sm font-medium text-gray-700'
-              >Password</label
-            >
-            <input
-              type='password'
-              id='password'
-              name='password'
-              class='mt-1 p-2 w-full border rounded-md focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300'
-            />
+            <div class='flex items-center justify-between'>
+              <label
+                for='password'
+                class='block text-sm font-medium leading-6 text-gray-900'
+                >Password</label
+              >
+              <div class='text-sm'>
+                <a
+                  href='#'
+                  class='font-semibold text-indigo-600 hover:text-indigo-500'
+                  >Forgot password?</a
+                >
+              </div>
+            </div>
+            <div class='mt-2'>
+              <input
+                id='password'
+                name='password'
+                type='password'
+                autocomplete='current-password'
+                required
+                class='block w-full rounded-md border-0 py-1.5 text-gray-dark shadow-sm ring-1 ring-inset ring-gray-dark placeholder:text-gray focus:ring-2 focus:ring-inset focus:ring-purple sm:text-sm sm:leading-6'
+              />
+            </div>
           </div>
+
           <div>
             <button
               type='submit'
-              class='w-full bg-black text-white p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300'
+              class='flex w-full justify-center rounded-md bg-purple px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
               >SIGN UP</button
             >
           </div>
         </form>
-        <div class='mt-4 text-sm text-gray-600 text-center'>
-          <span>
-            Already have an account?
-            <a
-              href={getPermalink('login', 'auth')}
-              class='text-black hover:underline'
-              >Log in</a
-            >
-          </span>
-        </div>
+
+        <p class='mt-10 text-center text-sm text-gray-dark'>
+          Have an account?
+          <a
+            href={getPermalink('login', 'auth')}
+            class='font-semibold leading-6 text-gray-dark hover:text-purple'
+            >Sign in</a
+          >
+        </p>
       </div>
     </div>
   </div>
