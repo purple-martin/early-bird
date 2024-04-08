@@ -1,5 +1,7 @@
 import { Field, Form, Formik } from 'formik';
 
+import { getPermalink } from '../../utils/permalinks';
+
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 export const LoginForm = () => (
@@ -61,5 +63,11 @@ export const LoginForm = () => (
         </Form>
       )}
     </Formik>
+    <p className="mt-10 text-center text-sm text-gray-dark">
+      Not a member?
+      <a href={getPermalink('signup', 'auth')} className="font-semibold leading-6 text-gray-dark hover:text-purple">
+        Start a 14 day free trial
+      </a>
+    </p>
   </div>
 );
