@@ -1,0 +1,38 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Authorization from '~/components/widgets/Authorization.astro';
+
+const metadata = {
+  title: 'Login',
+};
+---
+
+<Layout metadata={metadata}>
+  <Authorization
+    title='PURPLE MARTIN'
+    subtitle="There's a new bird in town."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Name',
+      },
+      {
+        type: 'password',
+        name: 'password',
+        label: 'Password',
+      },
+    ]}
+    links={[
+      {
+        href: '/forgot-password',
+        text: 'Forgot password?',
+      },
+      {
+        href: '/signup',
+        text: 'Sign up',
+      },
+    ]}
+    button='Login'
+  />
+</Layout>

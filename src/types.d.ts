@@ -205,6 +205,7 @@ export interface Form {
   button?: string;
   description?: string;
   action?: url;
+  links?: Array<{href: string; text: string;}>;
 }
 
 // WIDGETS
@@ -284,4 +285,6 @@ export interface Contact extends Headline, Form, Widget {}
 
 export interface Signup extends Headline, Form, Widget {}
 
-export interface Login extends Headline, Form, Widget {}
+export interface Login extends Headline, Form, Widget {
+  links?: Array<{href: string; text: string;}>
+}

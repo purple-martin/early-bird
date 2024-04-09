@@ -1,0 +1,48 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Authorization from '~/components/widgets/Authorization.astro';
+
+const metadata = {
+  title: 'Login',
+};
+---
+
+<Layout metadata={metadata}>
+  <Authorization
+    title='PURPLE MARTIN'
+    subtitle="There's a new bird in town."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Name',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Email',
+      },
+      {
+        type: 'password',
+        name: 'password',
+        label: 'Password',
+      },
+      {
+        type: 'password',
+        name: 'confirmPassword',
+        label: 'Confirm Password',
+      },
+    ]}
+    links={[
+      {
+        href: '/login',
+        text: 'Already have an account?',
+      },
+    ]}
+    disclaimer={{
+      label:
+        'By signing up you agree to our Terms of Service and Privacy Policy, and confirm that you are at least 18 years old.',
+    }}
+    button="SIGN UP"
+  />
+</Layout>

@@ -1,21 +1,21 @@
 ---
-import type { Form } from '~/types';
+import type { Form as Props } from '~/types';
 import Button from '~/components/ui/Button.astro';
-
-
-const { action, inputs, textarea, disclaimer, button = 'Contact us', description = '' } = Astro.props as Form;
+import { getPermalink } from '../../utils/permalinks';
+const { inputs, textarea, disclaimer, links, linkText, button = 'Submit', description = '' } = Astro.props;
 ---
 
-<!-- <form method="post" action={action}> -->
-<form method="post" hx-post={action}>
+<form>
   {
     inputs &&
       inputs.map(
         ({ type = 'text', name, label = '', autocomplete = 'on', placeholder = '' }) =>
           name && (
-            <div class="mb-6">
+            <div class='mb-6'>
               {label && (
-                <label for={name} class="block text-sm font-medium">
+                <label
+                  for={name}
+                  class='block text-sm font-medium'>
                   {label}
                 </label>
               )}
@@ -25,7 +25,7 @@ const { action, inputs, textarea, disclaimer, button = 'Contact us', description
                 id={name}
                 autocomplete={autocomplete}
                 placeholder={placeholder}
-                class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+                class='py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900'
               />
             </div>
           )
@@ -33,35 +33,36 @@ const { action, inputs, textarea, disclaimer, button = 'Contact us', description
   }
 
   {
-    textarea && (
-      <div>
-        <label for="textarea" class="block text-sm font-medium">
-          {textarea.label}
-        </label>
-        <textarea
-          id="textarea"
-          name="textarea"
-          rows={textarea.rows ? textarea.rows : 4}
-          placeholder={textarea.placeholder}
-          class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
-        />
+    links && (
+      <div class='mt-3 text-center text-sm text-gray-dark space-x-8'>
+        {links.map(({ href, text }) => (
+        <span class='text-sm text-gray-600 dark:text-gray-400'>
+            <a
+              href={href}
+              class='font-semibold leading-6 text-gray-dark hover:text-purple'>
+              {text}
+            </a>
+            </span>
+          ))}
       </div>
     )
   }
 
   {
     disclaimer && (
-      <div class="mt-3 flex items-start">
-        <div class="flex mt-0.5">
+      <div class='mt-3 flex items-start'>
+        <div class='flex mt-0.5'>
           <input
-            id="disclaimer"
-            name="disclaimer"
-            type="checkbox"
-            class="cursor-pointer mt-1 py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
+            id='disclaimer'
+            name='disclaimer'
+            type='checkbox'
+            class='cursor-pointer mt-1 py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900'
           />
         </div>
-        <div class="ml-3">
-          <label for="disclaimer" class="cursor-pointer select-none text-sm text-gray-600 dark:text-gray-400">
+        <div class='ml-3'>
+          <label
+            for='disclaimer'
+            class='cursor-pointer select-none text-sm text-gray-600 dark:text-gray-400'>
             {disclaimer.label}
           </label>
         </div>
@@ -71,16 +72,12 @@ const { action, inputs, textarea, disclaimer, button = 'Contact us', description
 
   {
     button && (
-      <div class="mt-10 grid">
-        <Button variant="secondary" type="submit">{button}</Button>
-      </div>
-    )
-  }
-
-  {
-    description && (
-      <div class="mt-3 text-center">
-        <p class="text-sm text-gray-600 dark:text-gray-400">{description}</p>
+      <div class='mt-10 grid'>
+        <Button
+          variant='primary'
+          type='submit'>
+          {button}
+        </Button>
       </div>
     )
   }
