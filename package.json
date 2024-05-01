@@ -17,7 +17,7 @@
   "dependencies": {
     "@alpinejs/morph": "^3.13.5",
     "@astrojs/alpinejs": "^0.4.0",
-    "@astrojs/react": "3.1.1",
+    "@astrojs/react": "3.2.0",
     "@astrojs/rss": "4.0.5",
     "@astrojs/sitemap": "3.1.2",
     "@astrolib/analytics": "^0.5.0",
