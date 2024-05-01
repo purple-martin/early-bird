@@ -33,7 +33,7 @@
     "@types/react": "^18.2.58",
     "@types/react-dom": "^18.2.19",
     "alpinejs": "^3.13.5",
-    "astro": "4.5.16",
+    "astro": "4.5.18",
     "astro-htmx": "^1.0.5",
     "astro-icon": "^1.0.3",
     "class-variance-authority": "^0.7.0",
